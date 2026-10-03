@@ -14,9 +14,9 @@ FR = language == "French"
 # --- ÉCRAN DE CONNEXION ---
 if not st.session_state["logged_in"]:
     st.title("🔒 PomoMind AI - Portail" if FR else "🔒 PomoMind AI - Portal")
+
     st.subheader("Veuillez choisir votre profil pour accéder à votre espace sécurisé." if FR else "Please choose your profile to access your secure space.")
-    
-    role_choice = st.radio("🔑 Choisis ton profil :" if FR else "🔑 Select your role :", ["Student", "Professor"])
+    role_choice = st.radio("🔑 Choisis ton profil :" if FR else "🔑 Select your role :", ["Student", "Professor"] if not FR else ["Elève", "Professeur"])
     username_input = st.text_input("Identifiant / Email" if FR else "Username / Email", placeholder="student, prof_bio, prof_cyber")
     password_input = st.text_input("Mot de Passe" if FR else "Password", type="password")
 
